@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Lichess Overlay",
+  "version": "1.0",
+  "description": "Curates chess games on Lichess in real-time",
+  "permissions": [
+    "activeTab",
+    "http://localhost:5000/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://lichess.org/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
